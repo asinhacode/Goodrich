@@ -10,6 +10,8 @@
  */
 package chapter1;
 
+import java.util.Arrays;
+
 public class Details {
 
 	static final int MAX = 10; // constants
@@ -18,7 +20,9 @@ public class Details {
 		
 		//System.out.println("Hello World");
 		
-		control(0);
+		//control(0);
+		
+		fibonacci(40);
 	}
 	
 	private static void control(int choice)
@@ -38,6 +42,39 @@ public class Details {
 				System.out.println(i + " World Hello");
 			}
 		}
+	}
+	
+	/**
+	 * return fibonacci numbers up till the limit
+	 * @param limit
+	 */
+	public static void fibonacci(int limit)
+	{
+		int first = 0,
+		second = 1;
+		
+		int[] fib = new int[limit];
+		
+		fib[0] = 0;
+		fib[1] = 1;
+	
+		
+		int temp = 0;
+		
+		for(int i = 2; i < limit; i++)
+		{
+			fib[i] = first + second;
+			int count = 0;
+
+				
+			temp = first;
+			first = second;
+			second = fib[i];
+		}
+		
+		System.out.println(Arrays.toString(fib));
+
+			
 	}
 
 }
